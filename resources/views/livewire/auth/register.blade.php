@@ -10,7 +10,7 @@
 
                 <label for="Name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
                 <div class="mt-2">
-                    <input wire:model="name" id="name"  type="text"   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    <input wire:model.lazy="name" id="name"  type="text"   class="@error('name') border-red-500 @enderror block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                     @error('name')
                        <span class="text-red-500"> {{ $message }}</span>
                     @enderror
@@ -34,7 +34,7 @@
                     <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
                 </div>
                 <div class="mt-2">
-                    <input wire:model="password" id="password" name="password" type="password" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    <input wire:model.lazy="password" id="password" name="password" type="password" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                     @error('password')
                     <span class="text-red-500"> {{ $message }}</span>
                     @enderror
@@ -45,7 +45,7 @@
                     <label for="passwordConfirmation" class="block text-sm font-medium leading-6 text-gray-900">Password Confirmation</label>
                 </div>
                 <div class="mt-2">
-                    <input  wire:model="password_confirmation"  type="password"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    <input  wire:model.lazy="password_confirmation"  type="password"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                     @error('password_confirmation')
                     <span class="text-red-500"> {{ $message }}</span>
                     @enderror
